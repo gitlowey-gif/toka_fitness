@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="register-container">
+    <div class="form-box">
+    <!-- <h1 class="register-title">Register Page</h1> -->
+
+    <form class="register-form" action="/register" method="POST">
+        <div class="form-group">
+
+        <h2 class="register-title">Create an Account</h2>
+        </div>
+
+        <div class="name-row">
+        <input type="text" placeholder="Firstname" name="first_name" class="form-input" required />
+        <input type="text" placeholder="Lastname" name="last_name" class="form-input" required />
+        </div>
+
+
+        <div class="form-group">
+        <input type="email" placeholder="Email" name="email" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+            <div class="phone-group">
+                <select class="form-input" required>
+                    <option>+44</option>
+                    <option>+1</option>
+                    <option>+234</option>
+                    <option>+254</option>
+                    <option>+27</option>
+                    <option>+212</option>
+                </select>
+                <input type="tel" placeholder="Phone" name="phone" maxlength="11" class="form-input" />
+                <input type="password" placeholder="Password" name="password" class="form-input" minlength="11" required />
+            </div>
+        </div>
+
+
+        <button type="submit" >Register Account</button>
+
+        <p class="login-link">
+        Already have an account? <a href="{{ url_for('login') }}">Login</a>
+        </p>
+
+    </form>
+</div>
+
+{% endblock %}
